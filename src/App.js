@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// import * as dotenv from 'dotenv'; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+import * as React from "react";
+import { Admin, Resource} from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
+import { NewsList, NewsEdit, NewsCreate } from "./news";
+import { AttractionList, AttractionEdit, AttractionCreate } from "./attractions";
+// import  dataProvider from "./dataProvider"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// require('dotenv').config()
+// console.log(process.env)
+
+
+const dataProvider = jsonServerProvider("http://localhost:8080");
+// console.log('dataProvider', dataProvider.getList("attraction", {}).then(data=>console.log('data', data)))
+
+const App = () => (
+<Admin dataProvider={dataProvider} >
+   <Resource name="news" list={NewsList} edit={ NewsEdit } create ={ NewsCreate }/>               
+   <Resource name="attraction" list={AttractionList} edit={AttractionEdit} create={AttractionCreate} />               
+</Admin>);
 
 export default App;
