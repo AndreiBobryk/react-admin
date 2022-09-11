@@ -31,10 +31,16 @@ export const NewsEdit = () => (
 export const NewsCreate = props => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput multiline source="content.en.text" />
+        <TextInput source="content.en.text" />
+            <DateInput source="dateCreated" />
+            <DateInput source="datePublished" />
             <BooleanInput source="displayOnHomePage" />
+            <TextInput source="images" />
             <DateInput source="publishedOnHomePage" />
+            <TextInput source="status" />
             <TextInput source="url" />
+            <TextInput source="webImages" />
         </SimpleForm>
     </Create>
 )
+

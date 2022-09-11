@@ -4,7 +4,6 @@ export const AttractionList = () => (
     <List>
         <Datagrid>
             <TextField source="address1" />
-            <TextField source="content.en.banner" />
             <DateField source="created" />
             <EmailField source="email" />
             <TextField source="phone" />
@@ -12,6 +11,7 @@ export const AttractionList = () => (
             <TextField source="priceChild" />
             <UrlField source="website" />
             <TextField source="id" />
+            <TextField source="oldId" />
             <EditButton/>
         </Datagrid>
     </List>
@@ -31,6 +31,7 @@ export const AttractionEdit = () => (
             <TextInput source="priceAdult" />
             <TextInput source="priceChild" />
             <TextInput source="webimages" />
+            <TextInput disabled source="oldId" />
         </SimpleForm>
     </Edit>
 );
