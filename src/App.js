@@ -7,6 +7,7 @@ import { AttractionList, AttractionEdit, AttractionCreate } from "./list/attract
 import { ApprovedCreate, ApprovedEdit, ApprovedList } from "./list/approved";
 import { CardCreate, CardEdit, CardList } from "./list/cards";
 import { MenuCreate, MenuEdit, MenuList } from "./list/menu";
+import { NoticeCreate, NoticeEdit, NoticeList } from "./list/notice";
 
 // import  dataProvider from "./dataProvider"
 
@@ -20,10 +21,11 @@ const dataProvider = jsonServerProvider("http://localhost:8080");
 const App = () => (
 <Admin dataProvider={dataProvider} >
    <Resource name="news" list={NewsList} edit={ NewsEdit } create ={ NewsCreate }/>               
-   <Resource name="attraction" list={AttractionList} edit={ AttractionEdit } create={AttractionCreate} recordRepresentation="id" />               
+   <Resource name="attraction" list={AttractionList} edit={ AttractionEdit } create={AttractionCreate} recordRepresentation="address1" />               
    <Resource name="approved" list={ ApprovedList }  edit={ApprovedEdit} create={ApprovedCreate}/>               
    <Resource name="card" list={ CardList }  edit={ CardEdit } create={ CardCreate }/>               
    <Resource name="menu" list={ MenuList }  edit={ MenuEdit } create={ MenuCreate }/>               
+   <Resource name="notice" list={ NoticeList }  edit={ NoticeEdit } create={ NoticeCreate }/>               
 </Admin>);
 
 export default App;

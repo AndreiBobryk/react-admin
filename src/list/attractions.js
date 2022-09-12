@@ -24,7 +24,6 @@ export const AttractionList = () => (
       <TextField source="priceChild" />
       <UrlField source="website" />
       <TextField source="id" />
-      <TextField source="oldId" />
       <EditButton />
     </Datagrid>
   </List>
@@ -43,7 +42,6 @@ export const AttractionEdit = () => (
       <TextInput source="priceAdult" />
       <TextInput source="priceChild" />
       <TextInput source="webimages" />
-      <TextInput disabled source="oldId" />
     </SimpleForm>
   </Edit>
 );
